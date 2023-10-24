@@ -29,24 +29,42 @@
                     </span>
                 </a>
             </li>
-            <!-- Database -->
+            <!-- Datos Historicos -->
             <li>
+                <a href="{{ route('dashboard.index') }}" class="navItem {{ (request()->is('general-settings*')) || (request()->is('users*')) || (request()->is('roles*')) || (request()->is('profiles*')) || (request()->is('permissions*')) ? 'active' : '' }}">
+                    <span class="flex items-center">
+                        <iconify-icon class=" nav-icon" icon="material-symbols:apps"></iconify-icon>
+                        <span>{{ __('Historial') }}</span>
+                    </span>
+                </a>
+            </li>
+            <!-- Configuracion alertas -->
+            <li>
+                <a href="{{ route('dashboard.index') }}" class="navItem {{ (request()->is('general-settings*')) || (request()->is('users*')) || (request()->is('roles*')) || (request()->is('profiles*')) || (request()->is('permissions*')) ? 'active' : '' }}">
+                    <span class="flex items-center">
+                        <iconify-icon class=" nav-icon" icon="material-symbols:settings-outline"></iconify-icon>
+                        <span>{{ __('ConfiguracionAlertas') }}</span>
+                    </span>
+                </a>
+            </li>
+            <!-- Database -->
+            {{--<li>
                 <a href="{{ route('database-backups.index') }}" class="navItem {{ (request()->is('database-backups*')) ? 'active' : '' }}">
                     <span class="flex items-center">
                         <iconify-icon class=" nav-icon" icon="iconoir:database-backup"></iconify-icon>
                         <span>{{ __('Database Backup') }}</span>
                     </span>
                 </a>
-            </li>
+            </li>--}}
             <!-- Settings -->
-            <li>
+            {{--<li>
                 <a href="{{ route('general-settings.show') }}" class="navItem {{ (request()->is('general-settings*')) || (request()->is('users*')) || (request()->is('roles*')) || (request()->is('profiles*')) || (request()->is('permissions*')) ? 'active' : '' }}">
                     <span class="flex items-center">
                         <iconify-icon class=" nav-icon" icon="material-symbols:settings-outline"></iconify-icon>
                         <span>{{ __('Settings') }}</span>
                     </span>
                 </a>
-            </li>
+            </li>--}}
         </ul>
     </div>
 </div>
