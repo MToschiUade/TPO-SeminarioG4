@@ -42,7 +42,7 @@
                     </div>
                 </div> -->
                 <h3 class="mt-4">Incendios</h3>
-                <form class="input-area flex items-center space-x-8 rtl:space-x-reverse" id="themeChanger">
+                {{--<form class="input-area flex items-center space-x-8 rtl:space-x-reverse" id="themeChanger">
                     <div class="input-group flex items-center">
                         <input type="radio" id="light" name="theme" value="light" class="themeCustomization-checkInput">
                         <label for="light" class="themeCustomization-checkInput-label">Activos</label>
@@ -56,7 +56,7 @@
                             class="themeCustomization-checkInput">
                         <label for="semiDark" class="themeCustomization-checkInput-label">Contenidos</label>
                     </div>
-                </form>
+                </form>--}}
             </div>
             <div class="divider"></div>
             <div class="p-6">
