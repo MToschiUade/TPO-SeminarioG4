@@ -100,11 +100,12 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
     'available_locales' => [
         'en'=>'united-states',
         'de'=>'germany',
         'fr'=>'france',
+        'es'=>'spanish',
     ],
 
     /*
