@@ -425,7 +425,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 }
 
 .leaflet-control-layers-toggle {
-    background-image: url(../../images/layers.png);
+    background-image: url(http://localhost:8000/images/layers.png);
     width: 36px;
     height: 36px;
 }
