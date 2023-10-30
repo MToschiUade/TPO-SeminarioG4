@@ -282,13 +282,36 @@
                     ["LOCATION_271",-38.2735700,-68.7003900,2],
                     ["LOCATION_272",-46.5348400,-68.8305600,2]
                 ];
-                var map = L.map("map").setView(position, 5);
+                let map = L.map("map").setView(position, 5);
 
-                L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                // Crear una capa de marcadores
+                let markerLayerFocos = L.layerGroup();
+
+                let clima = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+                    maxZoom: 18,
+                    subdomains:['mt0','mt1','mt2','mt3']
+                })/*.addTo(map)*/;
+
+                let focos = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
                     attribution:
                         '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
                     maxZoom: 18,
-                }).addTo(map);
+                })/*.addTo(map)*/;
+
+                let baseLayers = {
+                    'Mapa Polico': focos,
+                    'Mapa Fisico': clima
+                };
+
+                // Definir las capas adicionales para el control de capas
+                let overlays = {
+                    'Focos': markerLayerFocos
+                };
+
+                L.control.layers(baseLayers, overlays).addTo(map);
+
+                focos.addTo(map);
+                markerLayerFocos.addTo(map);
 
                 const fireIconRed = L.icon({
                     iconUrl: '{{@asset('images/icon/fire-station_red.png')}}',
@@ -335,7 +358,7 @@
                     icono = (locations[i][3] === 2) ? fireIconRed : icono;
 
                     L.marker([locations[i][1], locations[i][2]], {icon:icono})
-                        .addTo(map)
+                        .addTo(markerLayerFocos)
                         .bindPopup(
                             '<div class="">Latitud: '+locations[i][1]+' <br/ >Longitud: '+locations[i][2]+'</div>'
                         )
@@ -345,13 +368,25 @@
                 // obtenerInformacionAPI();
             }
 
+            clima(-23.9042900,-61.5087300);
+            // Obtener informacion del clima
+            function clima(latitud, longitud){
+                let requestOptions = {
+                    method: 'GET',
+                    redirect: 'follow'
+                };
+
+                fetch(`https://api.weatherapi.com/v1/current.json?key=ec067b06dd834b61a91222439232910&q=${latitud},${longitud}&aqi=no`, requestOptions)
+                    .then(response => response.text())
+                    .then(result => console.log(result))
+                    .catch(error => console.log('error', error));
+            }
             // Prueba manual
             function obtenerInformacionAPI(fecha) {
                 //const apiUrl = 'https://firms.modaps.eosdis.nasa.gov/api/area/csv/a968b3209c442b21f8012701fca172b4/VIIRS_SNPP_NRT/world/1/2023-10-22';
                 const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 
                 // Mock
-
 
                 fetch(proxyUrl + apiUrl)
                     .then(response => {
