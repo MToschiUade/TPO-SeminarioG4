@@ -286,6 +286,7 @@
 
                 // Crear una capa de marcadores
                 let markerLayerFocos = L.layerGroup();
+                let markerLayerClima = L.layerGroup();
 
                 let clima = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
                     maxZoom: 18,
@@ -305,13 +306,15 @@
 
                 // Definir las capas adicionales para el control de capas
                 let overlays = {
-                    'Focos': markerLayerFocos
+                    'Focos': markerLayerFocos,
+                    'Clima': markerLayerClima
                 };
 
                 L.control.layers(baseLayers, overlays).addTo(map);
 
                 focos.addTo(map);
                 markerLayerFocos.addTo(map);
+                // markerLayerClima.addTo(map);
 
                 const fireIconRed = L.icon({
                     iconUrl: '{{@asset('images/icon/fire-station_red.png')}}',
@@ -360,27 +363,71 @@
                     L.marker([locations[i][1], locations[i][2]], {icon:icono})
                         .addTo(markerLayerFocos)
                         .bindPopup(
-                            '<div class="">Latitud: '+locations[i][1]+' <br/ >Longitud: '+locations[i][2]+'</div>'
+                            '<div class="">Latitud: '+locations[i][1]+' <br/ >Longitud: '+locations[i][2]+'<div class="">'
                         )
                         .openPopup();
+
+                    // let climaPos = clima([locations[i][1],locations[i][2]]);
+
+
+
+                    climax(locations[i][1],locations[i][2])
+                        .then(json => {
+                            // Aquí puedes trabajar con el JSON retornado
+                            // console.log(json); // Por ejemplo, imprimir el JSON en la consola
+                            // También puedes acceder a propiedades específicas del JSON, por ejemplo:
+                            let temperatura = json.current.temp_c;
+                            let iconoClima = json.current.condition.icon;
+                            let region = json.location.region;
+                            let name = json.location.name;
+                            let vientokph = json.current.wind_kph;
+                            let vientodir = json.current.wind_dir;
+                            console.log(`La temperatura actual es: ${temperatura}°C`);
+
+                            L.marker([locations[i][1], locations[i][2]], {icon:L.icon({
+                                    iconUrl: iconoClima,
+                                    // shadowUrl: 'leaf-shadow.png',
+                                    iconSize:     [40, 40], // size of the icon
+                                    //shadowSize:   [50, 64], // size of the shadow
+                                    iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
+                                    // shadowAnchor: [4, 62],  // the same for the shadow
+                                    popupAnchor:  [0, 0] // point from which the popup should open relative to the iconAnchor
+                                })})
+                                .addTo(markerLayerClima)
+                                .bindPopup(
+                                    `<div class="">Provincia: ${region}<br>Localidad: ${name}<br>La temperatura actual es: ${temperatura}°C<br>Velocidad del viento: ${vientokph}<br>Direccion del viento: ${vientodir}<div class="">`
+                                )
+                                .openPopup();
+
+                        })
+                        .catch(error => {
+                            console.log('Ocurrió un error:', error);
+                        });
+
+
                 }
 
                 // obtenerInformacionAPI();
+
+
+                // Obtener informacion del clima
+                function climax(latitud, longitud){
+                    let requestOptions = {
+                        method: 'GET',
+                        redirect: 'follow'
+                    };
+
+                    return fetch(`https://api.weatherapi.com/v1/current.json?key=ec067b06dd834b61a91222439232910&q=${latitud},${longitud}&aqi=no`, requestOptions)
+                        .then(response => response.json())
+                        .then(result => result)
+                        .catch(error => console.log('error', error));
+                }
             }
 
-            clima(-23.9042900,-61.5087300);
-            // Obtener informacion del clima
-            function clima(latitud, longitud){
-                let requestOptions = {
-                    method: 'GET',
-                    redirect: 'follow'
-                };
+            //let c = clima(-23.9042900,-61.5087300);
+            //console.log(c);
 
-                fetch(`https://api.weatherapi.com/v1/current.json?key=ec067b06dd834b61a91222439232910&q=${latitud},${longitud}&aqi=no`, requestOptions)
-                    .then(response => response.text())
-                    .then(result => console.log(result))
-                    .catch(error => console.log('error', error));
-            }
+
             // Prueba manual
             function obtenerInformacionAPI(fecha) {
                 //const apiUrl = 'https://firms.modaps.eosdis.nasa.gov/api/area/csv/a968b3209c442b21f8012701fca172b4/VIIRS_SNPP_NRT/world/1/2023-10-22';
