@@ -380,6 +380,7 @@
                             let iconoClima = json.current.condition.icon;
                             let region = json.location.region;
                             let name = json.location.name;
+                            let climaActual = json.current.condition.text;
                             let vientokph = json.current.wind_kph;
                             let vientodir = json.current.wind_dir;
                             console.log(`La temperatura actual es: ${temperatura}°C`);
@@ -395,7 +396,7 @@
                                 })})
                                 .addTo(markerLayerClima)
                                 .bindPopup(
-                                    `<div class="">Provincia: ${region}<br>Localidad: ${name}<br>La temperatura actual es: ${temperatura}°C<br>Velocidad del viento: ${vientokph}<br>Direccion del viento: ${vientodir}<div class="">`
+                                    `<div class="">Provincia: ${region}<br>Localidad: ${name}<br>${climaActual}<br>La temperatura actual es: ${temperatura}°C<br>Velocidad del viento: ${vientokph}<br>Direccion del viento: ${vientodir}<div class="">`
                                 )
                                 .openPopup();
 
@@ -417,7 +418,7 @@
                         redirect: 'follow'
                     };
 
-                    return fetch(`https://api.weatherapi.com/v1/current.json?key=ec067b06dd834b61a91222439232910&q=${latitud},${longitud}&aqi=no`, requestOptions)
+                    return fetch(`https://api.weatherapi.com/v1/current.json?key=ec067b06dd834b61a91222439232910&q=${latitud},${longitud}&aqi=no&lang=es`, requestOptions)
                         .then(response => response.json())
                         .then(result => result)
                         .catch(error => console.log('error', error));
