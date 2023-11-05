@@ -5,6 +5,10 @@
     @push('scripts')
         <script type="module">
             // Basic Map
+            /*testNasa().then(arrayDeDatos => {
+                console.log(arrayDeDatos);
+            });*/
+
             if (document.getElementById("map")) {
                 // map active
                 var position = [-34.60355339707198, -58.3815811344386];
@@ -299,9 +303,16 @@
                     maxZoom: 18,
                 })/*.addTo(map)*/;
 
+
+                let googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+                    maxZoom: 20,
+                    subdomains:['mt0','mt1','mt2','mt3']
+                });
+
                 let baseLayers = {
                     'Mapa Polico': focos,
-                    'Mapa Fisico': clima
+                    'Mapa Fisico': clima,
+                    'Mapa Satelital': googleSat
                 };
 
                 // Definir las capas adicionales para el control de capas
@@ -396,7 +407,15 @@
                                 })})
                                 .addTo(markerLayerClima)
                                 .bindPopup(
-                                    `<div class="">Provincia: ${region}<br>Localidad: ${name}<br>${climaActual}<br>La temperatura actual es: ${temperatura}°C<br>Velocidad del viento: ${vientokph}<br>Direccion del viento: ${vientodir}<div class="">`
+                                    `<div class="">
+                                            Provincia: ${region}<br>
+                                            Localidad: ${name}<br>
+                                            ----------------------------<br>
+                                            ${climaActual}<br>
+                                            La temperatura actual es: ${temperatura}°C<br>
+                                            Velocidad del viento: ${vientokph}<br>
+                                            Direccion del viento: ${vientodir}
+                                    <div class="">`
                                 )
                                 .openPopup();
 
@@ -428,7 +447,31 @@
             //let c = clima(-23.9042900,-61.5087300);
             //console.log(c);
 
+            // Pruebas veresiones api
+            function testNasa() {
+                var requestOptions = {
+                    method: 'GET',
+                    redirect: 'follow'
+                };
 
+                return fetch("https://firms.modaps.eosdis.nasa.gov/api/area/csv/a968b3209c442b21f8012701fca172b4/VIIRS_SNPP_NRT/world/1/2023-10-22", requestOptions)
+                    .then(response => response.text())
+                    .then(result => {
+                        // Dividir la respuesta en líneas y almacenarlas en un array
+                        let local = [];
+                        let aInicial = result.split('\n');
+                        aInicial.forEach(function(value, index){
+                            // console.log(value);
+                            local.push([value]);
+                        });
+
+                        return local;
+                    })
+                    .catch(error => {
+                        console.log('error', error);
+                        return [];
+                    });
+            }
             // Prueba manual
             function obtenerInformacionAPI(fecha) {
                 //const apiUrl = 'https://firms.modaps.eosdis.nasa.gov/api/area/csv/a968b3209c442b21f8012701fca172b4/VIIRS_SNPP_NRT/world/1/2023-10-22';
