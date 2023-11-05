@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="light">
+{{--<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="light">--}}
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,12 +20,8 @@
                             <x-application-logo />
                         </div>
                         <h4>
-{{--                            {{ __('Unlock your project') }}--}}
-                            Sistema de detecci&oacute;n temprana de
-                            <span class="text-slate-800 dark:text-slate-400 font-bold">
-{{--                                {{ __('Performance') }}--}}
-                                Incendios Forestales
-                            </span>
+                            <span class="text-slate-800 dark:text-slate-400 font-bold">SAT.IA</span>
+                            <br/> Sistema de Alerta Temprana de Incendios en Argentina
                         </h4>
                     </div>
                     <div class="absolute left-0 2xl:bottom-[-160px] bottom-[-130px] h-full w-full z-[-1]">
@@ -41,7 +37,7 @@
                             <script>
                                 document.write(new Date().getFullYear())
                             </script>
-                            , <a href="#">{{ __('Dashcode') }}</a>
+                            ,
                             {{ __('All Rights Reserved.') }}
                         </div>
                     </div>
