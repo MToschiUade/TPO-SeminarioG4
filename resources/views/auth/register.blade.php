@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="max-w-[242px] mx-auto mt-8 w-full">
-            <x-social-login></x-social-login>
+            <x-nasa-firms></x-nasa-firms>
         </div>
         <div class="md:max-w-[345px] mx-auto font-normal text-slate-500 dark:text-slate-400 mt-8 uppercase text-sm">
             <span> {{ __('ALREADY REGISTERED?') }}</span>
