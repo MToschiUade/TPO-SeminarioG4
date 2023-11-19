@@ -26,6 +26,10 @@ Route::get('/', function () {
 Route::group(['middleware' => ['auth', 'verified']], function () {
     // Dashboards
     Route::get('dashboard', [HomeController::class, 'index'])->name('dashboard.index');
+    // Seccion datos historicos
+    Route::get('historico', [HomeController::class, 'historico'])->name('dashboard.historico');
+    // Seccion configuracion de alertas
+    Route::get('alertas', [HomeController::class, 'alertas'])->name('dashboard.alertas');
     // Locale
     Route::get('setlocale/{locale}', SetLocaleController::class)->name('setlocale');
 
@@ -40,6 +44,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     // Env
     Route::singleton('general-settings', GeneralSettingController::class);
     Route::post('general-settings-logo', [GeneralSettingController::class, 'logoUpdate'])->name('general-settings.logo');
+
 
     // Database Backup
     Route::resource('database-backups', DatabaseBackupController::class);

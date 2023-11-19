@@ -33,6 +33,44 @@ class HomeController extends Controller
     }
 
     /**
+     * Datos historicos
+     */
+    public function historico()
+    {
+        $breadcrumbsItems = [
+            [
+                'name' => 'Datos Historicos',
+                'url' => '/',
+                'active' => true
+            ],
+        ];
+
+        return view('maps.datos-historicos.index', [
+            'pageTitle' => 'Datos Historicos',
+            'breadcrumbItems' => $breadcrumbsItems
+        ]);
+    }
+
+    /**
+     * Confirguracion de alertas
+     */
+    public function alertas()
+    {
+        $breadcrumbsItems = [
+            [
+                'name' => 'Configuración de alertas',
+                'url' => '/',
+                'active' => true
+            ],
+        ];
+
+        return view('maps.configurar-alertas.index', [
+            'pageTitle' => 'Configuración de alertas',
+            'breadcrumbItems' => $breadcrumbsItems
+        ]);
+    }
+
+    /**
      * Ecommerce Dashboard
      */
     public function ecommerceDashboard()
