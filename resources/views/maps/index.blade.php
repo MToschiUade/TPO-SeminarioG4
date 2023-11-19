@@ -4,6 +4,23 @@
     <div id="map" style="width: 100%; height: 85.7vh; overflow-y: hidden"></div>
 
     @push('scripts')
+        <script>
+            // Función para mostrar el modal después de 3 segundos
+            function mostrarModal() {
+                let modal = document.getElementById("basic_modal");
+                modal.style.display = "block"
+                modal.classList.add("show")
+            }
+
+            function closeModal() {
+                let modal = document.getElementById("basic_modal");
+                modal.style.display = "none"
+                modal.classList.remove("show")
+            }
+
+            // Esperar 3 segundos y luego mostrar el modal
+            setTimeout(mostrarModal, 1000);
+        </script>
         <script src="{{@asset('js/marcadores.js')}}"></script>
         <script type="module">
             // Basic Map
