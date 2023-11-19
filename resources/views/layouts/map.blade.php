@@ -54,7 +54,7 @@
                 <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
                     <div class="relative bg-white rounded-lg shadow dark:bg-slate-700">
                         <!-- Modal header -->
-                        <div class="flex items-center justify-between p-5 border-b rounded-t dark:border-slate-600" style="background-color: yellow">
+                        <div class="flex items-center justify-between p-5 border-b rounded-t dark:border-slate-600" style="background-color: yellow; background-image: url('{{@asset('images/alertas/fondo_alerta_amarillo.png')}}'); background-size: 100% 100%; background-repeat: no-repeat;">
                             <h3 class="text-xl font-medium dark:text-white capitalize">
                                 Alerta Amarilla
                             </h3>
@@ -72,8 +72,10 @@
                                 CLIMA
                             </h6>
                             <p class="text-base text-slate-600 dark:text-slate-400 leading-6">
-                                Deteccion temprana de posible foco <br>
-                                Coordenadas: <br>
+                                <span class="font-bold">Parcialmente nublado</span> <br>
+                                La temperatura actual es: <span class="font-bold">32.7°C</span> <br>
+                                Velocidad del viento: <span class="font-bold">19.1</span> <br>
+                                Direccion del viento: <span class="font-bold">SE</span> <br>
                             </p>
                             <h6 class="text-base text-slate-900 dark:text-white leading-6">
                                 EMERGENCIAS
