@@ -19,10 +19,6 @@
         <x-sidebar-menu />
         <!-- End: Sidebar -->
 
-        <!-- BEGIN: Settings -->
-        <x-dashboard-settings />
-        <!-- End: Settings -->
-
         <div class="flex flex-col justify-between min-h-screen">
             <div>
                 <!-- BEGIN: header -->

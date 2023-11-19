@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FirmsModel;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -45,9 +46,12 @@ class HomeController extends Controller
             ],
         ];
 
+        $datos_historicos = FirmsModel::orderBy('created_at', 'desc')->paginate(25);
+
         return view('maps.datos-historicos.index', [
             'pageTitle' => 'Datos Historicos',
-            'breadcrumbItems' => $breadcrumbsItems
+            'breadcrumbItems' => $breadcrumbsItems,
+            'datosHistoricos' => $datos_historicos
         ]);
     }
 
