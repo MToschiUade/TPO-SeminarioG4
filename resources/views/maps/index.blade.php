@@ -126,7 +126,7 @@
 
                     // let climaPos = clima([locations[i][1],locations[i][2]]);
 
-/*
+
 
                     climax(locations[i][1],locations[i][2])
                         .then(json => {
@@ -169,7 +169,7 @@
                         .catch(error => {
                             console.log('Ocurrió un error:', error);
                         });
-*/
+
 
                 }
 
