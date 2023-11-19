@@ -19,7 +19,7 @@
             }
 
             // Esperar 3 segundos y luego mostrar el modal
-            setTimeout(mostrarModal, 1000);
+            setTimeout(mostrarModal, 5000);
         </script>
         <script src="{{@asset('js/marcadores.js')}}"></script>
         <script type="module">
