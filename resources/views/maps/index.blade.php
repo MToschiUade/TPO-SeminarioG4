@@ -5,7 +5,7 @@
 
     @push('scripts')
         <script>
-            // Función para mostrar el modal después de 3 segundos
+            // Función para mostrar el modal alerta amarilla después de 3 segundos
             function mostrarModal() {
                 let modal = document.getElementById("basic_modal");
                 modal.style.display = "block"
@@ -178,6 +178,7 @@
 
                 // Obtener informacion del clima
                 function climax(latitud, longitud){
+                    // return  false;
                     let requestOptions = {
                         method: 'GET',
                         redirect: 'follow'
