@@ -22,28 +22,28 @@
     <div class="dropdown-menu z-10 hidden bg-white divide-y divide-slate-100 shadow w-44 dark:bg-slate-800 border dark:border-slate-700 !top-[23px] rounded-md
         overflow-hidden">
         <ul class="py-1 text-sm text-slate-800 dark:text-slate-200" :class="listView ? 'z-20 opacity-100 top-[61px]' : 'opacity-0 -z-20 top-5' " x-show="listView" @click.away="listView = false">
-            <li>
-                <a href="{{ route('profiles.index') }}" class="flex items-center px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-600 dark:hover:text-white font-inter text-sm text-slate-600
-                      dark:text-white font-normal" @class(['country-list', 'active'=>
-                    request()->routeIs('profiles.index')])>
-                    <iconify-icon class="text-lg text-textColor dark:text-white mr-2" icon="carbon:user-avatar">
-                    </iconify-icon>
-                    <span class="dropdown-option">
-                        @lang('Profile')
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('general-settings.show') }}" class="flex items-center px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-600 dark:hover:text-white font-inter text-sm text-slate-600
-                      dark:text-white font-normal" @class(['country-list', 'active'=>
-                    request()->routeIs('general-settings.edit')])>
-                    <iconify-icon class="text-lg text-textColor dark:text-white mr-2" icon="material-symbols:settings-outline">
-                    </iconify-icon>
-                    <span class="dropdown-option">
-                        @lang('Settings')
-                    </span>
-                </a>
-            </li>
+{{--            <li>--}}
+{{--                <a href="{{ route('profiles.index') }}" class="flex items-center px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-600 dark:hover:text-white font-inter text-sm text-slate-600--}}
+{{--                      dark:text-white font-normal" @class(['country-list', 'active'=>--}}
+{{--                    request()->routeIs('profiles.index')])>--}}
+{{--                    <iconify-icon class="text-lg text-textColor dark:text-white mr-2" icon="carbon:user-avatar">--}}
+{{--                    </iconify-icon>--}}
+{{--                    <span class="dropdown-option">--}}
+{{--                        @lang('Profile')--}}
+{{--                    </span>--}}
+{{--                </a>--}}
+{{--            </li>--}}
+{{--            <li>--}}
+{{--                <a href="{{ route('general-settings.show') }}" class="flex items-center px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-600 dark:hover:text-white font-inter text-sm text-slate-600--}}
+{{--                      dark:text-white font-normal" @class(['country-list', 'active'=>--}}
+{{--                    request()->routeIs('general-settings.edit')])>--}}
+{{--                    <iconify-icon class="text-lg text-textColor dark:text-white mr-2" icon="material-symbols:settings-outline">--}}
+{{--                    </iconify-icon>--}}
+{{--                    <span class="dropdown-option">--}}
+{{--                        @lang('Settings')--}}
+{{--                    </span>--}}
+{{--                </a>--}}
+{{--            </li>--}}
             {{-- Logout --}}
             <li>
                 <form method="POST" action="{{ route('logout') }}" class="flex items-center px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-600 dark:hover:text-white font-inter text-sm text-slate-600
