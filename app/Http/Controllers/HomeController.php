@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AlertasModel;
 use App\Models\FirmsModel;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -68,9 +69,12 @@ class HomeController extends Controller
             ],
         ];
 
+        $alertas = AlertasModel::orderBy('created_at', 'desc')->paginate(25);
+
         return view('maps.configurar-alertas.index', [
             'pageTitle' => 'Configuración de alertas',
-            'breadcrumbItems' => $breadcrumbsItems
+            'breadcrumbItems' => $breadcrumbsItems,
+            'alertas' => $alertas
         ]);
     }
 
