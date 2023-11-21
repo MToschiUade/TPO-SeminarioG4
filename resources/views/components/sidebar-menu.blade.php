@@ -31,7 +31,7 @@
             </li>
             <!-- Datos Historicos -->
             <li>
-                <a href="{{ route('dashboard.historico') }}" class="navItem {{ (request()->is('general-settings*')) || (request()->is('users*')) || (request()->is('roles*')) || (request()->is('profiles*')) || (request()->is('permissions*')) ? 'active' : '' }}">
+                <a href="{{ route('dashboard.historico') }}" class="navItem {{ (request()->is('historico*'))  ? 'active' : '' }}">
                     <span class="flex items-center">
                         <iconify-icon class=" nav-icon" icon="material-symbols:apps"></iconify-icon>
                         <span>{{ __('Historial') }}</span>
@@ -40,7 +40,7 @@
             </li>
             <!-- Configuracion alertas -->
             <li>
-                <a href="{{ route('dashboard.alertas') }}" class="navItem {{ (request()->is('general-settings*')) || (request()->is('users*')) || (request()->is('roles*')) || (request()->is('profiles*')) || (request()->is('permissions*')) ? 'active' : '' }}">
+                <a href="{{ route('dashboard.alertas') }}" class="navItem {{ (request()->is('alertas*')) ? 'active' : '' }}">
                     <span class="flex items-center">
                         <iconify-icon class=" nav-icon" icon="material-symbols:settings-outline"></iconify-icon>
                         <span>{{ __('ConfiguracionAlertas') }}</span>
