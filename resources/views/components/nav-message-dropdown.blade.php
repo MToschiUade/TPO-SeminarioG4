@@ -41,7 +41,7 @@
                 <div class="text-xs hover:text-[#68768A] text-slate-800 dark:text-slate-800 mb-1">Detecci&oacute;n temprana de posible foco</div>
                 <div class="text-xs hover:text-[#68768A] text-slate-800 dark:text-slate-800 mb-1">Coordenadas: <span> -25.04494, -60.55855</span></div>
                 <div class="text-xs hover:text-[#68768A] text-slate-600 dark:text-slate-300 mb-1"><span style="color: black">EMERGENCIAS:</span></div>
-                <div class="text-xs hover:text-[#68768A] text-slate-600 dark:text-slate-300 mb-1">Telefono: <a href="tel:0370 442-8888">0370 442-8888</a></div>
+                <div class="text-xs hover:text-[#68768A] text-slate-600 dark:text-slate-300 mb-1">Télefono: <a href="tel:0370 442-8888">0370 442-8888</a></div>
                 <div class="text-xs hover:text-[#68768A] text-slate-600 dark:text-slate-300 mb-1">Direcci&oacute;n: P3600 Formosa</div>
                 <div class="text-slate-400 dark:text-slate-400 text-xs">
                 15 min atras</div>
@@ -75,7 +75,7 @@
                     <div class="text-xs hover:text-[#68768A] text-slate-800 dark:text-slate-800 mb-1">Foco de riesgo medio detectado</div>
                     <div class="text-xs hover:text-[#68768A] text-slate-800 dark:text-slate-800 mb-1">Coordenadas: <span> -24.42417, -62.79539</span></div>
                     <div class="text-xs hover:text-[#68768A] text-slate-600 dark:text-slate-300 mb-1"><span style="color: black">EMERGENCIAS:</span></div>
-                    <div class="text-xs hover:text-[#68768A] text-slate-600 dark:text-slate-300 mb-1">Telefono: <a href="tel:0387 423-3333">0387 423-3333</a></div>
+                    <div class="text-xs hover:text-[#68768A] text-slate-600 dark:text-slate-300 mb-1">Télefono: <a href="tel:0387 423-3333">0387 423-3333</a></div>
                     <div class="text-xs hover:text-[#68768A] text-slate-600 dark:text-slate-300 mb-1">Direcci&oacute;n: Alberdi 943 4400 Salta, Provincia de Salta, Argentina</div>
                     <div class="text-slate-400 dark:text-slate-400 text-xs">
                         15 min atras</div>
@@ -109,7 +109,7 @@
                     <div class="text-xs hover:text-[#68768A] text-slate-800 dark:text-slate-800 mb-1">Foco activo detectado</div>
                     <div class="text-xs hover:text-[#68768A] text-slate-800 dark:text-slate-800 mb-1">Coordenadas: <span> -26.69996, -62.97368</span></div>
                     <div class="text-xs hover:text-[#68768A] text-slate-600 dark:text-slate-300 mb-1"><span style="color: black">EMERGENCIAS:</span></div>
-                    <div class="text-xs hover:text-[#68768A] text-slate-600 dark:text-slate-300 mb-1">Telefono: <a href="tel:0385 485-8031">0385 485-8031</a></div>
+                    <div class="text-xs hover:text-[#68768A] text-slate-600 dark:text-slate-300 mb-1">Télefono: <a href="tel:0385 485-8031">0385 485-8031</a></div>
                     <div class="text-slate-400 dark:text-slate-400 text-xs">
                         5 min atras</div>
                 </div>

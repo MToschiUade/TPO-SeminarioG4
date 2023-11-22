@@ -8,7 +8,7 @@
             <!-- BEGIN: Basic Table -->
             <div class="card">
                 <header class=" card-header noborder">
-                    <h6>Zonas de interes</h6>
+                    <h6>Zonas de interés</h6>
                 </header>
                 <div class="card-body px-6 pb-6">
                     <div class="overflow-x-auto -mx-6">

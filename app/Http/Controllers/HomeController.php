@@ -41,7 +41,7 @@ class HomeController extends Controller
     {
         $breadcrumbsItems = [
             [
-                'name' => 'Datos Historicos',
+                'name' => 'Datos Históricos',
                 'url' => '/',
                 'active' => true
             ],
@@ -50,7 +50,7 @@ class HomeController extends Controller
         $datos_historicos = FirmsModel::orderBy('created_at', 'desc')->paginate(25);
 
         return view('maps.datos-historicos.index', [
-            'pageTitle' => 'Datos Historicos',
+            'pageTitle' => 'Datos Históricos',
             'breadcrumbItems' => $breadcrumbsItems,
             'datosHistoricos' => $datos_historicos
         ]);

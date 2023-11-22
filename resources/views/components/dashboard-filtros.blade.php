@@ -54,7 +54,7 @@
                     <tr>
                         <td class="table-td" style="text-transform: lowercase">
                             <img src="{{@asset('images/icon/fire_selector.png')}}" alt="thumb-1" style="float:left">
-                            <span style="text-transform: capitalize">E</span> selector le permite seleccionar entre los distintos tipos de mapas, y activar los marcadores de focos y clima.
+                            <span style="text-transform: capitalize">E</span>l control le permite seleccionar entre los distintos tipos de mapas, y activar los marcadores de focos y clima.
                         </td>
                     </tr>
                     </tbody>

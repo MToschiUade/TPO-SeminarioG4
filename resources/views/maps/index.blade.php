@@ -19,7 +19,7 @@
             }
 
             // Esperar 3 segundos y luego mostrar el modal
-            setTimeout(mostrarModal, 5000);
+            setTimeout(mostrarModal, 10000);
         </script>
         <script src="{{@asset('js/marcadores.js')}}"></script>
         <script type="module">
@@ -160,7 +160,7 @@
                                             ${climaActual}<br>
                                             La temperatura actual es: ${temperatura}°C<br>
                                             Velocidad del viento: ${vientokph}<br>
-                                            Direccion del viento: ${vientodir}
+                                            Dirección del viento: ${vientodir}
                                     <div class="">`
                                 )
                                 .openPopup();

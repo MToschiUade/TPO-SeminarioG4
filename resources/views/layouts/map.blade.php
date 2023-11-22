@@ -75,13 +75,13 @@
                                 <span class="font-bold">Parcialmente nublado</span> <br>
                                 La temperatura actual es: <span class="font-bold">32.7°C</span> <br>
                                 Velocidad del viento: <span class="font-bold">19.1</span> <br>
-                                Direccion del viento: <span class="font-bold">SE</span> <br>
+                                Dirección del viento: <span class="font-bold">SE</span> <br>
                             </p>
                             <h6 class="text-base text-slate-900 dark:text-white leading-6">
                                 EMERGENCIAS
                             </h6>
                             <p>
-                                Telefono: <a href="tel:0370 442-8888">0370 442-8888</a><br>
+                                Télefono: <a href="tel:0370 442-8888">0370 442-8888</a><br>
                                 Direcci&oacute;n: P3600 Formosa
                             </p>
                         </div>
@@ -122,13 +122,13 @@
                                 <span class="font-bold">Soleado</span> <br>
                                 La temperatura actual es: <span class="font-bold">34°C</span> <br>
                                 Velocidad del viento: <span class="font-bold">12.2</span> <br>
-                                Direccion del viento: <span class="font-bold">NNE</span> <br>
+                                Dirección del viento: <span class="font-bold">NNE</span> <br>
                             </p>
                             <h6 class="text-base text-slate-900 dark:text-white leading-6">
                                 EMERGENCIAS
                             </h6>
                             <p>
-                                Telefono: <a href="tel:0387 423-3333">0387 423-3333</a><br>
+                                Télefono: <a href="tel:0387 423-3333">0387 423-3333</a><br>
                                 Direcci&oacute;n: Alberdi 943 4400 Salta, Provincia de Salta, Argentina<br>
                                 Web: <a href="http://bomberosdesalta.com.ar/" target="_blank">Bomberos voluntarios</a>
                             </p>
@@ -170,13 +170,13 @@
                                 <span class="font-bold">Parcialmente nublado</span> <br>
                                 La temperatura actual es: <span class="font-bold">35.2°C</span> <br>
                                 Velocidad del viento: <span class="font-bold">16.2</span> <br>
-                                Direccion del viento: <span class="font-bold">NNE</span> <br>
+                                Dirección del viento: <span class="font-bold">NNE</span> <br>
                             </p>
                             <h6 class="text-base text-slate-900 dark:text-white leading-6">
                                 EMERGENCIAS
                             </h6>
                             <p>
-                                Telefono: <a href="tel:0385 485-8031">0385 485-8031</a><br>
+                                Télefono: <a href="tel:0385 485-8031">0385 485-8031</a><br>
                             </p>
                         </div>
                         <!-- Modal footer -->
